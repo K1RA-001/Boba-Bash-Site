@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trusted Cookie Recipes</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf8f8;
+    margin: 0;
+    padding: 0;
+}
+.top-bar {
+    background-color: #f7dfdf;
+    position: relative;
+    z-index: 20;
+}
+.top-bar::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: radial-gradient(circle at 10px 0, #f7dfdf 10px, transparent 11px);
+    background-size: 20px 10px;
+    background-repeat: repeat-x;
+}
+.site-header {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 10;
+}
+.recipe-link {
+    color: #8a4b4b;
+    text-decoration: underline;
+    font-weight: 600;
+    text-underline-offset: 4px;
+    transition: color 0.2s;
+}
+.recipe-link:hover {
+    color: #5c3232;
+}
+.polaroid {
+    border: 15px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transform: rotate(4deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.polaroid:hover {
+    transform: rotate(0deg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+.nav-icon {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+    color: #e09d9d;
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar flex items-center justify-center py-3 px-4 gap-5">
+    <span class="font-bold text-gray-900 text-sm md:text-base tracking-wide">Sally's Baking 101 Cookbook</span>
+    <button class="bg-black text-white text-xs md:text-sm font-bold py-2 px-6 rounded-full hover:bg-gray-800 transition tracking-wider">ORDER TODAY!</button>
+</div>
+
+<header class="site-header flex flex-wrap items-center justify-between px-[5%] py-[15px] shadow-sm">
+    <div class="flex items-center">
+        <a href="#" class="font-bold text-2xl tracking-[1px] text-gray-900 uppercase flex items-center gap-2">
+            <span class="text-[#e09d9d] text-3xl leading-none">\\</span> SALLY'S BAKING
+        </a>
+    </div>
+    
+    <nav class="hidden lg:flex items-center gap-[30px] text-sm text-gray-800 font-medium">
+        <a href="#" class="hover:text-[#8a4b4b] transition flex flex-col items-center"><span class="nav-icon">🍽️</span>All Recipes</a>
+        <a href="#" class="hover:text-[#8a4b4b] transition flex flex-col items-center"><span class="nav-icon">🥣</span>Baking Tips</a>
+        <a href="#" class="hover:text-[#8a4b4b] transition flex flex-col items-center"><span class="nav-icon">🌾</span>Ingredient</a>
+        <a href="#" class="hover:text-[#8a4b4b] transition flex flex-col items-center"><span class="nav-icon">👥</span>Community</a>
+        <a href="#" class="hover:text-[#8a4b4b] transition flex flex-col items-center"><span class="nav-icon">🛒</span>Sally's Shop</a>
+        <a href="#" class="hover:text-[#8a4b4b] transition flex flex-col items-center"><span class="nav-icon">🎥</span>Videos</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+        <button class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:bg-gray-50 hover:border-gray-400 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+        </button>
+        <button class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:bg-gray-50 hover:border-gray-400 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+    </div>
+</header>
+
+<main class="max-w-[1100px] mx-auto px-[20px] py-[60px]">
+    <div class="flex flex-col md:flex-row gap-12 md:gap-8 items-start">
+        
+        <div class="w-full md:w-[60%]">
+            <div class="text-sm text-gray-600 mb-6 font-medium tracking-wide">
+                <a href="#" class="hover:text-gray-900 underline underline-offset-4">Desserts</a> - <span class="text-gray-900">Cookies</span>
+            </div>
+            
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-[#f7dfdf] rounded-full flex items-center justify-center text-[#8a4b4b] text-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-semibold text-gray-900">Trusted Cookie Recipes</h1>
+            </div>
+            
+            <p class="text-gray-700 leading-[1.8] text-[1.05rem]">
+                Welcome to my most expansive recipe category! From the ever-popular recipes for classics like chewy <a href="#" class="recipe-link">chocolate chip cookies</a> and <a href="#" class="recipe-link">sugar cookies</a>, to reader favorites like <a href="#" class="recipe-link">snickerdoodles</a> and <a href="#" class="recipe-link">oatmeal raisin cookies</a>, you'll find literally hundreds of cookie recipes here. All these recipes contain my best tips and tutorials for cookie success, and don't forget to stop by my <a href="#" class="recipe-link">Cookie Baking Supplies</a> page. Whether you're a baking beginner or are looking for your next challenge, you're sure to find a new favorite cookie recipe here.
+            </p>
+        </div>
+
+        <div class="w-full md:w-[40%] flex justify-center md:justify-end mt-8 md:mt-0 pt-4">
+            <img src="https://sallysbakingaddiction.com/wp-content/uploads/2017/05/chewy-oatmeal-chocolate-chip-cookies-2-600x600.jpg" alt="Oatmeal Chocolate Chip Cookies on wire rack" class="polaroid max-w-full h-auto w-[90%] md:w-full object-cover">
+        </div>
+        
+    </div>
+
+    <div class="mt-24">
+        <h2 class="text-3xl font-semibold text-gray-900 mb-10 text-center">Essential Baking Tips</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-pink-100 transition hover:-translate-y-1 hover:shadow-md">
+                <div class="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-xl mb-4">🌡️</div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3">Room Temperature</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Always use room temperature butter and eggs unless specified otherwise. This ensures a smooth, even, and well-aerated dough.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-pink-100 transition hover:-translate-y-1 hover:shadow-md">
+                <div class="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-xl mb-4">⚖️</div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3">Measure Properly</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Spoon and level your flour! Scooping directly from the bag packs too much flour into the cup and leads to dry, crumbly cookies.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-pink-100 transition hover:-translate-y-1 hover:shadow-md">
+                <div class="w-12 h-12 bg-pink-50 rounded-full flex items-center justify-center text-xl mb-4">❄️</div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3">Chill the Dough</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Don't skip chilling! It prevents cookies from spreading too thin in the oven and concentrates the rich flavor beautifully.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-[#f7dfdf] pt-20 pb-8 mt-12">
+    <div class="max-w-[1100px] mx-auto px-[20px] grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+        <div>
+            <a href="#" class="font-bold text-2xl tracking-[1px] text-gray-900 uppercase flex items-center gap-2 mb-6">
+                <span class="text-white text-3xl leading-none drop-shadow-md">\\</span> SALLY'S BAKING
+            </a>
+            <p class="text-gray-800 mb-6 text-sm leading-relaxed">Join our community of passionate bakers. Discover new recipes, techniques, and endless baking inspiration directly from my kitchen to yours.</p>
+        </div>
+        <div class="pl-0 md:pl-12">
+            <h4 class="font-bold text-gray-900 text-lg mb-6 uppercase tracking-wider">Quick Links</h4>
+            <ul class="flex flex-col gap-4 text-sm font-medium">
+                <li><a href="#" class="text-gray-700 hover:text-[#8a4b4b] transition flex items-center gap-2"><span class="text-[#e09d9d]">▹</span> All Recipes</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-[#8a4b4b] transition flex items-center gap-2"><span class="text-[#e09d9d]">▹</span> Baking Tips</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-[#8a4b4b] transition flex items-center gap-2"><span class="text-[#e09d9d]">▹</span> Ingredients</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-[#8a4b4b] transition flex items-center gap-2"><span class="text-[#e09d9d]">▹</span> Sally's Shop</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold text-gray-900 text-lg mb-6 uppercase tracking-wider">Stay Sweet!</h4>
+            <p class="text-gray-800 mb-5 text-sm">Sign up for my email newsletter and get a free comprehensive baking guide delivered today.</p>
+            <form class="flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Email address" class="w-full px-5 py-3 rounded-full border-none shadow-sm focus:outline-none focus:ring-2 focus:ring-[#8a4b4b] text-sm" required>
+                <button type="submit" class="bg-[#8a4b4b] text-white px-8 py-3 rounded-full font-bold hover:bg-[#5c3232] transition shadow-md whitespace-nowrap text-sm tracking-wide">SUBSCRIBE</button>
+            </form>
+        </div>
+    </div>
+    <div class="max-w-[1100px] mx-auto px-[20px] border-t border-[rgba(138,75,75,0.15)] pt-8 text-center text-gray-700 text-sm font-medium">
+        &copy; 2026 Sally's Baking. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
